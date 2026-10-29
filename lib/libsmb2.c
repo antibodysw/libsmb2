@@ -401,6 +401,7 @@ decode_dirents(struct smb2_context *smb2, struct smb2dir *dir,
                 ent->dirent.st.smb2_nlink = 0;
                 ent->dirent.st.smb2_ino = fs.file_id;
                 ent->dirent.st.smb2_size = fs.end_of_file;
+                ent->dirent.st.smb2_alloc_size = fs.allocation_size;  /* WizTree patch */
                 ent->dirent.st.smb2_atime = fs.last_access_time.tv_sec;
                 ent->dirent.st.smb2_atime_nsec = fs.last_access_time.tv_usec * 1000;
                 ent->dirent.st.smb2_mtime = fs.last_write_time.tv_sec;

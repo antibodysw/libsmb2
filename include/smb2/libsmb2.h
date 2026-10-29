@@ -109,6 +109,11 @@ struct smb2_stat_64 {
          * servers that do not tell us the tag.
          */
         uint32_t smb2_reparse_tag;
+        /*
+         * WizTree patch: the allocated size on disk, as a directory listing
+         * reports it (AllocationSize). Only filled in for directory entries.
+         */
+        uint64_t smb2_alloc_size;
 };
 
 struct smb2_statvfs {
